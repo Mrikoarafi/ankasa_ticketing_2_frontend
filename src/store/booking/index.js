@@ -58,10 +58,12 @@ const actions = {
     return new Promise((resolve, reject) => {
       axios.post(`${url}/booking/add`, payload)
         .then((response) => {
-          console.log(response.data.data)
+          // console.log(response.data.data)
+          resolve(response)
         })
         .catch((err) => {
-          console.log(err)
+          // console.log(err)
+          reject(err)
         })
     })
   }

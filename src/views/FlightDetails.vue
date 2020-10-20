@@ -308,6 +308,14 @@ export default {
         total: this.databooking.price * (this.child + this.adult)
       }
       this.sendBooking(dataPassenger)
+      this.sendBooking(dataPassenger)
+        .then((response) => {
+          alert(response.data.message)
+          window.location = '/booking'
+        })
+        .catch((err) => {
+          alert(err)
+        })
     }
   },
   mounted () {
