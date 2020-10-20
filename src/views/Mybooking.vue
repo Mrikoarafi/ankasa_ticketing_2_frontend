@@ -138,10 +138,51 @@
                   </b-navbar-toggle>
                   <b-collapse id="navbar-toggle-collapse2" is-nav>
                     <b-navbar-nav class="mr-auto">
-                      <p style="color: #2395ff" class="mt-3">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                        Provident, quia?
-                      </p>
+                      <div class="row">
+                        <div class="col">
+                          <div class="col">
+                            <p style="color: #2395ff" class="mt-3">
+                              Airlines: {{booking.airlines}}
+                            </p>
+                          </div>
+                          <div class="col">
+                            <p style="color: #2395ff" class="mt-3" v-if="booking.class_flight === 0">
+                              Class: Ekonomi
+                            </p>
+                            <p style="color: #2395ff" class="mt-3" v-else-if="booking.class_flight === 1">
+                              Class: Bussiness
+                            </p>
+                            <p style="color: #2395ff" class="mt-3" v-else>
+                              Class: First Class
+                            </p>
+                          </div>
+                          <div class="col">
+                            <p style="color: #2395ff" class="mt-3">
+                              Departure : {{booking.date}}, {{booking.departure}}
+                            </p>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div class="col">
+                            <p style="color: #2395ff" class="mt-3">
+                              Pessanger: {{booking.title}} {{booking.fullname}}
+                            </p>
+                          </div>
+                          <div class="col">
+                            <p style="color: #2395ff" class="mt-3">
+                              Total : Rp. {{booking.total}}
+                            </p>
+                          </div>
+                          <div class="col">
+                            <p style="color: #2395ff" class="mt-3" v-if="booking.payment_status === 0">
+                              Payment Status : Waiting
+                            </p>
+                            <p style="color: #2395ff" class="mt-3" v-if="booking.payment_status === 1">
+                              Payment Status : Done
+                            </p>
+                          </div>
+                        </div>
+                      </div>
                     </b-navbar-nav>
                   </b-collapse>
                 </b-navbar>
