@@ -31,7 +31,9 @@ const actions = {
     return new Promise((resolve, reject) => {
       axios.get(`${url}/city/getAll`)
         .then((response) => {
+          console.log(response.data.data)
           context.commit('SET_CITY', response.data.data)
+          resolve()
         })
         .catch((err) => {
           console.log(err)

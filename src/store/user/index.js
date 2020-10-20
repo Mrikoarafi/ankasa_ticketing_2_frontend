@@ -42,6 +42,7 @@ const actions = {
     formdata.append('address', payload.address)
     formdata.append('fullname', payload.fullname)
     formdata.append('image', payload.newImage)
+    formdata.append('id_city', payload.id_city)
     formdata.append('phone', payload.phone)
     formdata.append('post_code', payload.post_code)
     return new Promise((resolve, reject) => {

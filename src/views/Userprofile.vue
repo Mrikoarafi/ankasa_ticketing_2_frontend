@@ -100,7 +100,7 @@
                 <div>
                   <p class="label">City</p>
                   <Select :disabled="disable" v-model="dataUser.id_city">
-                    <option :value="city.id" v-for="city in getDataCity"  :key="city.id">{{city.name}}</option>
+                    <option :value="3" v-for="city in getDataCity"  :key="city.id">{{city.city_name}}</option>
                   </Select>
                 </div>
                 <div>
@@ -157,14 +157,14 @@
                 <div>
                   <p class="label">City</p>
                   <Select>
-                    <option value="" v-for="city in getDataCity" :key="city.id">
-                      {{city.name}}
+                    <option value="a" v-for="city in getDataCity" :key="city.id">
+                      Kambing
                     </option>
                   </Select>
                 </div>
                 <div>
                   <p class="label">Address</p>
-                  <input type="email" v-model="dataUser.address"/>
+                  <input type="text" v-model="dataUser.address"/>
                 </div>
                 <div>
                   <p class="label">Post Code</p>
@@ -248,7 +248,9 @@ export default {
         this.dataUser = this.getdetaildata
         console.log(this.dataUser)
       })
-    this.getCity()
+    this.getCity().then(() => {
+      console.log(this.getDataCity)
+    })
   },
   computed: {
     ...mapGetters({
